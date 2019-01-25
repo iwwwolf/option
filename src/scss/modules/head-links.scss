@@ -1,0 +1,25 @@
+.head-links {
+    display: none;
+    min-width: 100%;
+    flex-grow: 2;
+    background: #fff;
+    color: #000;
+    margin: 0 rem(-$containerPadding);
+    order: 1;
+
+    &.visible {
+        display: block;
+    }
+}
+
+.head-links__item {
+    display: flex;
+    align-items: center;
+    min-height: rem(52);
+    border-bottom: 1px solid $borderBase;
+    padding: rem(12 20);
+
+    & > * {
+        flex-basis: 100%;
+    }
+}

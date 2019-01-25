@@ -1,0 +1,128 @@
+.header {
+    background: $headerBackground;
+    color: $headerTextColor;
+    position: relative;
+
+    * {
+        color: inherit;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.header__burger-link {
+    display: block;
+    width: rem(28);
+    padding: rem(9 0);
+
+    svg {
+        height: rem(17);
+        margin: 0 auto;
+        
+        &:first-child {
+            display: block;
+        }
+        &:last-child {
+            display: none;
+        }
+    }
+
+    &.active {
+        svg {
+            &:first-child {
+                display: none;
+            }
+            &:last-child {
+                display: block;
+            }
+        }
+    }
+}
+
+[class*="header__link"] {
+    display: flex;
+    align-items: center;
+}
+
+.header__link {
+    &-login {
+        svg {
+            @include size(rem(14));
+            margin-right: rem(8);
+        }
+    }
+
+    &-webtrader {
+        svg {
+            @include size(rem(22), rem(16));
+            margin-right: rem(10);
+        }
+
+        path {
+            fill: currentColor;
+            stroke: currentColor;
+        }
+    }
+
+    &-phone {
+        font-size: rem(16);
+        font-weight: 500;
+
+        svg {
+            @include size(rem(23), rem(22));
+            margin-right: rem(9);
+        }
+    }
+
+    &-call {
+        svg {
+            @include size(rem(17));
+            margin-right: rem(15);
+        }
+
+        path {
+            &:not([class*="svg"]) {
+                fill: currentColor;
+                stroke: currentColor;
+            }
+            
+            &.svg--only-stroke {
+                stroke: currentColor;
+            }
+
+            &.svg--only-fill {
+                fill: currentColor;
+            }
+        }
+    }
+
+    &-consultant {
+        svg {
+            @include size(rem(16), rem(19));
+            margin-right: rem(16);
+        }
+
+        path {
+            fill: currentColor;
+            stroke: currentColor;
+        }
+    }
+}
+
+@media (min-width: $desktopWidth) {
+    .header__link {
+        &-login {
+        }
+
+        &-webtrader {
+            svg {
+                @include size(rem(18), rem(12));
+            }
+        }
+    }
+}

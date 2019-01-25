@@ -1,0 +1,35 @@
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+@function convert-to-rem($value, $base-value: $mainFontSize) {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+    @if ($value==0rem) {
+        $value: 0;
+    }
+    @return $value;
+}
+@function rem($values, $base-value: $mainFontSize) {
+    $max: length($values);
+    @if $max==1 {
+        @return convert-to-rem(nth($values, 1), $base-value);
+    }
+    $remValues: ();
+    @for $i from 1 through $max {
+        $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+    }
+    @return $remValues;
+}
+
+
+@mixin size($width,$height: $width) {
+    width: $width;
+    height: $height;
+}
+
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+}

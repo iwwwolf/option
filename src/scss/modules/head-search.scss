@@ -1,0 +1,37 @@
+.head-search {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.head-search__control {
+    flex-basis: 100%;
+    @include placeholder {
+        color: currentColor;
+    }
+}
+
+.head-search__input {
+    display: block;
+    @include size(100%, rem(28));
+    padding: 0;
+    border: none;
+}
+
+.head-search__btn {
+    display: block;
+    min-width: rem(28);
+    order: -1;
+    border: none;
+    padding: 0;
+    background: none;
+    margin-right: rem(4);
+
+    svg {
+        @include size(rem(14), rem(15));
+    }
+
+    path {
+        fill: currentColor;
+    }
+}

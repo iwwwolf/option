@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font: normal #{$mainFontSize / 320 * 100 + vw}/$mainLineHeight $mainFont;
+    color: $defaultColor;
+    background: $pageBackground;
+    @include size(100%);
+}
+
+body {
+    @include size(100%);
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+.container {
+    max-width: rem(1240);
+    padding: rem(0 $containerPadding);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+svg {
+    display: block;
+    max-width: 100%;
+}
