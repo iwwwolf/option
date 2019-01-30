@@ -17,15 +17,6 @@ module.exports = {
             loader: 'babel-loader',
             exclude: '/node_modules/'
         }, {
-            test: /\.html$/,
-            use: [ {
-                loader: 'html-loader',
-                options: {
-                    minimize: true,
-                    removeComments: false
-                }
-            }],
-        }, {
             test: /\.scss$/,
             use: [
                 'style-loader',
@@ -84,8 +75,7 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: './node_modules/flag-icon-css/flags', to: './src/images/flags/' },
             { from: './src/images', to: './src/images/' },
-            { from: './src/videos', to: './src/videos/' },
-            { from: './pages', to: './' }
+            { from: './src/videos', to: './src/videos/' }
         ])
     ]
 }
