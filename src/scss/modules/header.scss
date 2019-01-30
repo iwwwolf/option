@@ -55,6 +55,10 @@
             @include size(rem(14));
             margin-right: rem(8);
         }
+
+        path {
+            fill: currentColor;
+        }
     }
 
     &-webtrader {
@@ -114,15 +118,79 @@
     }
 }
 
-@media (min-width: $desktopWidth) {
+
+@media (min-width: $smDesktopWidth) {
+    .header {
+        .container {
+            flex-wrap: nowrap;
+            min-height: rem(40);
+        }
+    }
+    .header__burger-link {
+        display: none;
+    }
+
+    [class*="header__link"] {
+        &:hover {
+            text-decoration: underline;
+            color: currentColor;
+        }
+    }
+
+    .header__link-login {
+        margin-left: rem(25);
+    }
+
     .header__link {
         &-login {
+            svg {
+                min-width: rem(14);
+            }
         }
 
         &-webtrader {
             svg {
                 @include size(rem(18), rem(12));
+                min-width: rem(18);
             }
         }
+
+        &-phone {
+            font-size: rem(18);
+
+            svg {
+                @include size(rem(23), rem(22));
+                min-width: rem(23);
+                margin-right: rem(7);
+            }
+        }
+
+        &-call {
+            svg {
+                @include size(rem(15));
+                min-width: rem(15);
+                margin-right: rem(6);
+            }
+        }
+
+        &-consultant {
+            svg {
+                @include size(rem(14), rem(17));
+                min-width: rem(14);
+                margin-right: rem(5);
+            }
+        }
+    }
+}
+
+@media (min-width: $desktopWidth) {
+    .header__link {
+        &-phone {
+            font-size: rem(20);
+        }
+    }
+    
+    .header__link-login {
+        margin-left: rem(60);
     }
 }

@@ -1,0 +1,79 @@
+$buttons: (
+    Primary,
+    Success,
+    Danger
+);
+
+$colors: (
+    'Primary' : $btnPrimary,
+    'PrimaryHover' : $btnPrimaryHover,
+    'PrimaryText' : $btnPrimaryText,
+    'Success' : $btnSuccess,
+    'SuccessHover' : $btnSuccessHover,
+    'SuccessText' : $btnSuccessText,
+    'Danger' : $btnDanger,
+    'DangerHover' : $btnDangerHover,
+    'DangerText' : $btnDangerText
+);
+
+@function color($key) {
+    @return map-get($colors, $key);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    font-size: rem(16);
+    line-height: 1;
+    background: transparent;
+    border-radius: $globalRadius;
+    padding: rem(14 25 13);
+    color: $btnPrimary;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid $btnPrimary;
+    min-width: rem(110);
+    box-shadow: none;
+    transition: $transition;
+
+    @each $item in $buttons {
+        &--#{to-lower-case($item)} {
+            background: color($item);
+            border-color: color($item);
+            color: color(#{$item}Text);
+
+            &:hover {
+                background: color(#{$item}Hover);
+                border-color: color(#{$item}Hover);
+                color: color(#{$item}Text);
+            }
+
+            &-outline {
+                background: transparent;
+                color: color($item);
+                border: 1px solid color($item);
+
+                &:hover {
+                    background: color($item);
+                    color: color(#{$item}Text);
+                }
+            }
+        }
+    }
+}
+
+[class*="btn__icon"] {
+    display: inline-block;
+    margin-right: rem(8);
+    path {
+        fill: currentColor;
+    }
+}
+
+.btn__icon {
+    &--login {
+        @include size(rem(14));
+    }
+}

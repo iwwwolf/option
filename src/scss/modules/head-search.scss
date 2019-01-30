@@ -7,7 +7,7 @@
 .head-search__control {
     flex-basis: 100%;
     @include placeholder {
-        color: currentColor;
+        color: inherit;
     }
 }
 
@@ -29,9 +29,23 @@
 
     svg {
         @include size(rem(14), rem(15));
+        min-width: rem(14);
     }
 
     path {
         fill: currentColor;
+    }
+}
+
+
+@media (min-width: $smDesktopWidth) {
+    .head-search__control {
+        display: none;
+    }
+
+    .head-search__btn {
+        min-width: 0;
+        margin: 0;
+        padding: rem(6);
     }
 }

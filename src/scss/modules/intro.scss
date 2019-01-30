@@ -1,0 +1,88 @@
+.intro {
+    padding: rem(20 0 40);
+    position: relative;
+}
+
+.intro__text {
+    margin-bottom: rem(40);
+}
+
+.intro__button {
+    padding-top: rem(10);
+}
+
+.intro__awards {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: rem(13);
+    font-weight: 300;
+    
+    svg {
+        margin-right: rem(20);
+    }
+
+    &--cup {
+        svg {
+            @include size(rem(32), rem(36));
+            min-width: rem(32);
+        }
+    }
+
+    &--years {
+        svg {
+            @include size(rem(58), rem(32));
+            min-width: rem(58);
+        }
+    }
+}
+
+
+@media (min-width: $smDesktopWidth) {
+    .intro {
+        padding-top: rem(42);
+        text-align: center;
+        min-height: rem(670);
+    }
+
+    .intro__awards {
+        width: rem(210);
+        text-align: left;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .head-block & {
+            &:first-child {
+                left: 0;
+            }
+
+            &:last-child {
+                right: 0;
+            }
+        }
+    }
+
+    .intro__image {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        //background: $text-c;
+        z-index: -1;
+
+        img {
+            max-width: none;
+            min-width: 100%;
+            height: auto;
+            min-height: 100%;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

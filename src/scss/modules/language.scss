@@ -1,4 +1,7 @@
 .language {
+    position: relative;
+    z-index: 1;
+
     .flag-icon {
         display: block;
         @include size(rem(20));
@@ -55,4 +58,58 @@
 
 .language__name {
     text-transform: capitalize;
+}
+
+
+@media (min-width: $smDesktopWidth) {
+    .language {
+        .flag-icon {
+            border: none;
+        }
+
+        &:hover {
+            .language__body {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .language__select {
+        .language__name {
+            display: none;
+        }
+    }
+
+    .language__body {
+        display: block;
+        background: $headerBackground;
+        color: $headerTextColor;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        transition: $transition;
+    }
+
+    .language__list {
+        column-count: 1;
+        column-gap: 0;
+
+        li {
+            padding: 0;
+        }
+    }
+
+    .language__link {
+        display: flex;
+        white-space: nowrap;
+        padding: rem(8 15);
+        background: transparent;
+
+        &:hover {
+            color: inherit;
+            background: darken($headerBackground, 7%);
+        }
+    }
 }

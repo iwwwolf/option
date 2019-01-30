@@ -1,0 +1,14 @@
+.video-bg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+}
+
+@media (max-width: $smDesktopWidth - 1) {
+    .video-bg {
+        display: none;
+    }
+}

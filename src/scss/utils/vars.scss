@@ -7,6 +7,7 @@ $mainFontSize            : 15; //px
 $mainFontWeight          : 400;
 $mainLineHeight          : 1.4;
 
+$xlDesktopWidth          : 1600px;
 $desktopWidth            : 1280px;
 $smDesktopWidth          : 980px;
 $tableWidth              : 768px;
@@ -19,6 +20,8 @@ $pageBackground          : #f0eff0;
 $defaultColor            : #424243;
 $headerBackground        : #423D33;
 $headerTextColor         : #fff;
+$footerBackground        : #EEEEEE;
+$footerTextColor         : $defaultColor;
 $primaryColor            : #009E82;
 $successColor            : #FDCD53;
 $dangerColor             : #D83C35;
@@ -34,12 +37,25 @@ $dangerColor             : #D83C35;
 
 // Border Color
 $borderBase              : #e6e6e6;
-// $border-light            : #E4E7ED;
+$borderLight             : #BEBEBE;
 // $border-lighter          : #EBEEF5;
 // $border-lightex          : #F2F6FC;
 
+// Button Color
+$btnPrimary: $primaryColor;
+$btnPrimaryText: #fff;
+$btnPrimaryHover: darken($btnPrimary, 7%);
+$btnDanger: $dangerColor;
+$btnDangerText: $mainFontColor;
+$btnDangerHover: darken($btnDanger, 7%);
+$btnSuccess: $successColor;
+$btnSuccessText: $mainFontColor;
+$btnSuccessHover: darken($btnSuccess, 7%);
 
 $containerPadding: 20;
+$globalRadius: 3px;
+
+$transition: all 200ms ease;
 
 //Flags
 $flag-icon-css-path: '/dist/src/images/flags';

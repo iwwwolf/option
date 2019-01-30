@@ -27,9 +27,96 @@ body {
 
 a {
     text-decoration: none;
+    color: $primaryColor;
+    transition: $transition;
+
+    &:hover {
+        color: darken($primaryColor, 7%);
+    }
 }
 
-svg {
+p {
+    margin: rem(0 0 20);
+}
+
+svg,
+img {
     display: block;
     max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: rem(32);
+    line-height: 1.208;
+    font-weight: 300;
+    margin: rem(0 0 30);
+}
+
+h3 {
+    font-size: rem(22);
+    line-height: 1.4385;
+    font-weight: 300;
+    margin: rem(0 0 30);
+}
+
+.--fw-light {
+    font-weight: 300;
+}
+
+.--visible-mobile {
+    display: block;
+
+    &-flex {
+        display: flex;
+    }
+}
+
+
+
+@media (max-width: $smDesktopWidth - 1) {
+    .--hidden-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: $tableWidth) {
+    html {
+        font-size: 32 / 768 * 100 + vw;
+    }
+}
+
+@media (min-width: $phoneWidth) and (orientation: landscape) {
+    html {
+        font-size: 15 / 480 * 100 + vw;
+    }
+}
+
+@media (min-width: $smDesktopWidth) {
+    html {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: rem(48);
+        margin: rem(0 0 35);
+    }
+
+    h3 {
+        font-size: rem(20);
+        margin: rem(0 0 35);
+    }
+
+    [class*="visible-mobile"] {
+        display: none !important;
+    }
+}
+
+@media (min-width: $xlDesktopWidth) {
+    html {
+        font-size: 16 / 1600 * 100 + vw;
+    }
 }

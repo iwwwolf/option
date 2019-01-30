@@ -1,0 +1,123 @@
+$social: (
+    telegram,
+    youtube,
+    twitter,
+    ok,
+    vk,
+    facebook,
+    tumblr,
+    instagram
+);
+
+$socWidth: (
+    telegram: 20,
+    youtube: 22,
+    twitter: 20,
+    ok: 13,
+    vk: 22,
+    facebook: 11,
+    tumblr: 12,
+    instagram: 22
+);
+
+$socHeight: (
+    telegram: 17,
+    youtube: 16,
+    twitter: 17,
+    ok: 21,
+    vk: 13,
+    facebook: 23,
+    tumblr: 21,
+    instagram: 22
+);
+
+$socHoverColor: (
+    telegram: #00a8da,
+    youtube: #d63833,
+    twitter: #55ACEE,
+    ok: #ff9730,
+    vk: #1b658b,
+    facebook: #1c5698,
+    tumblr: #385873,
+    instagram: #dd2a7b
+);
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: rem(0 0 20);
+
+    li {
+        display: block;
+        margin-left: rem(8);
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+[class*="footer-social__link"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: rem(26);
+    height: rem(26);
+}
+
+.footer-social__link {
+
+    @each $soc in $social {
+        &--#{$soc} {
+            svg {
+                @include size(rem(getKey($socWidth, $soc) - 3), rem(getKey($socHeight, $soc) - 3));
+                min-width: rem(getKey($socWidth, $soc) - 3);
+            }
+
+            path {
+                transition: $transition;
+            }
+
+            &:hover {
+                path {
+                    fill: getKey($socHoverColor, $soc);
+
+                    @if $soc == youtube {
+                        &.svg__triangle {
+                            fill: #fff;
+                        }
+                    }
+
+                    @if $soc == ok {
+                        &.svg__ok-head {
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: $smDesktopWidth) {
+    .footer-social {
+        margin: 0;
+
+        li {
+            margin-left: rem(30);
+        }
+    }
+
+    .footer-social__link {
+        @each $soc in $social {
+            &--#{$soc} {
+                svg {
+                    @include size(rem(getKey($socWidth, $soc)), rem(getKey($socHeight, $soc)));
+                    min-width: rem(getKey($socWidth, $soc));
+                }
+            }
+        }
+    }
+}

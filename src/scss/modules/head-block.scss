@@ -1,0 +1,35 @@
+.head-block {
+    border-bottom: 1px solid $borderLight;
+    padding-bottom: rem(25);
+    margin: rem(0 (-$containerPadding) 30);
+    position: relative;
+}
+
+.head-block__logo {
+    width: rem(270);
+    margin: 0 auto;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+
+@media (min-width: $smDesktopWidth) {
+    .head-block {
+        border: none;
+        margin: rem(0 0 108);
+        padding: 0;
+    }
+
+    .head-block__logo {
+        width: rem(400);
+    }
+}
+
+@media (min-width: $desktopWidth) {
+    .head-block__logo {
+        width: rem(460);
+    }
+}
