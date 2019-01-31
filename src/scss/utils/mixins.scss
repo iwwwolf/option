@@ -41,6 +41,12 @@
 }
 
 
+@mixin minMax($minWidth,$maxWidth: $minWidth) {
+    min-width: $minWidth;
+    max-width: $maxWidth;
+}
+
+
 @mixin placeholder {
     ::-webkit-input-placeholder {@content}
     :-moz-placeholder           {@content}

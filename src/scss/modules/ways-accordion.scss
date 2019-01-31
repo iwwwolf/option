@@ -26,16 +26,35 @@
             }
         }
     }
+
+    & > * {
+        flex-basis: 0;
+    }
+}
+
+[class*="ways-accordion__icon"] {
+    display: block;
+    flex-grow: 2;
 }
 
 .ways-accordion__icon {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: rem(35);
-    max-height: rem(36);
-    flex-grow: 1;
-    margin-right: rem(20);
+    &--trade {
+        @include size(rem(59),rem(42));
+        @include minMax(rem(59));
+        margin-right: rem(20);
+    }
+
+    &--investing {
+        @include size(rem(58),rem(51));
+        @include minMax(rem(58));
+        margin-right: rem(21);
+    }
+
+    &--involve {
+        @include size(rem(61),rem(65));
+        @include minMax(rem(61));
+        margin-right: rem(18);
+    }
 }
 
 .ways-accordion__arrow {
@@ -57,7 +76,8 @@
     display: none;
     margin-bottom: rem(12);
     position: relative;
-    padding-bottom: rem(270,14);
+    overflow: hidden;
+
     &-wrap {
         max-width: rem(680);
         position: relative;
