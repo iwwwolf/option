@@ -56,6 +56,13 @@ h1 {
     margin: rem(0 0 30);
 }
 
+h2 {
+    font-size: rem(26);
+    line-height: 1.208;
+    font-weight: 300;
+    margin: rem(0 0 22);
+}
+
 h3 {
     font-size: rem(22);
     line-height: 1.4385;
@@ -80,6 +87,12 @@ h3 {
 @media (max-width: $smDesktopWidth - 1) {
     .--hidden-mobile {
         display: none !important;
+    }
+}
+
+@media (min-width: 640px) {
+    html {
+        font-size: 25 / 640 * 100 + vw;
     }
 }
 

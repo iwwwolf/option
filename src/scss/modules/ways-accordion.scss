@@ -73,38 +73,52 @@
 }
 
 .ways-accordion__content {
-    display: none;
     margin-bottom: rem(12);
     position: relative;
     overflow: hidden;
+    height: auto;
+    display: block;
+    transition: height 300ms;
+    will-change: height;
+
 
     &-wrap {
         max-width: rem(680);
+        padding-top: rem(20);
         position: relative;
         z-index: 1;
     }
 }
 
-.ways-accordion__image {
-    width: 200%;
-    position: absolute;
-    right: rem(-18);
-    bottom: 0;
-    &:before {
-        width: 100%;
-        height: 50%;
-        background: linear-gradient(to bottom, rgba(243,242,218,1) 0%,rgba(243,242,218,0) 100%);
-        position: absolute;
-        left: 0;
-        top: 0;
-        content: '';
-    }
-    img {
-        display: block;
-        max-width: 100%;
-        height: auto;
+// .ways-accordion__image {
+//     width: 200%;
+//     position: absolute;
+//     right: rem(-18);
+//     bottom: 0;
+//     &:before {
+//         width: 100%;
+//         height: 50%;
+//         background: linear-gradient(to bottom, rgba(243,242,218,1) 0%,rgba(243,242,218,0) 100%);
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         content: '';
+//     }
+//     img {
+//         display: block;
+//         max-width: 100%;
+//         height: auto;
+//     }
+// }
+
+.ways-accordion__text {
+    font-size: rem(17);
+    padding-bottom: rem(10);
+    p {
+        margin-bottom: rem(10);
     }
 }
+
 
 @media(min-width: 560px) {
     .ways-accordion__image {
