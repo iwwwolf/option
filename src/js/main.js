@@ -58,3 +58,5 @@ let accordionLink = document.querySelectorAll('[data-accordion="link"]');
 for (let i = 0; i < accordionLink.length; i++) {
     accordionLink[i].addEventListener('click', function () {slideToggle(event)}, false);
 }
+console.log($);
+

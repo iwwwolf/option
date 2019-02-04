@@ -1,6 +1,7 @@
 const path = require('path'),
       MiniCssExtractPlugin = require('mini-css-extract-plugin'),
       CopyWebpackPlugin = require('copy-webpack-plugin');
+      //WebpackProvideGlobalPlugin = require('webpack-provide-global-plugin');
 
 module.exports = {
     entry: {
@@ -77,5 +78,9 @@ module.exports = {
             { from: './src/images', to: './src/images/' },
             { from: './src/videos', to: './src/videos/' }
         ])
+        // new WebpackProvideGlobalPlugin({
+        //     $: 'jquery',
+        //     jQuery: 'jquery'
+        // })
     ]
 }
