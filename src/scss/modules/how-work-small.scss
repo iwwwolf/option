@@ -1,0 +1,92 @@
+$howWorkBg: #fff !default;
+
+.how-work-small {
+    background: $howWorkBg;
+    padding: rem(20);
+    margin-top: rem(40);
+}
+
+[class*="how-work-small__icon"] {
+    display: block;
+    padding: rem(3 0);
+    background: $howWorkBg;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.how-work-small__icon {
+    &--cards {
+        svg {
+            @include size(rem(17), rem(14));
+        }
+    }
+
+    &--people {
+        svg {
+            @include size(rem(17));
+        }
+    }
+
+    &--auth {
+        svg {
+            @include size(rem(16), rem(15));
+        }
+    }
+}
+
+.how-work-small__title {
+    font-weight: 500;
+    font-size: rem(18);
+    margin-bottom: rem(15);
+}
+
+.how-work-small__list {
+    padding: 0;
+
+    li {
+        display: block;
+        padding: rem(0 0 20 35);
+        position: relative;
+
+        &::before {
+            display: block;
+            @include size(rem(1), 100%);
+            background: $borderLight;
+            position: absolute;
+            left: rem(8);
+            top: 0;
+            content: '';
+        }
+
+        &:first-child {
+            [class*="how-work-small__icon"] {
+                padding-top: 0;
+            }
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+
+            [class*="how-work-small__icon"] {
+                padding-bottom: 0;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+
+@media(min-width: $smDesktopWidth) {
+    .how-work-small {
+        width: rem(320);
+        padding: rem(30);
+        font-size: rem(16);
+        margin: rem(0 0 0 50);
+        box-shadow: $mainBoxShadow;
+    }
+}

@@ -47,6 +47,7 @@
 [class*="header__link"] {
     display: flex;
     align-items: center;
+    font-size: rem(14);
 }
 
 .header__link {
@@ -75,7 +76,6 @@
 
     &-phone {
         font-size: rem(16);
-        font-weight: 500;
 
         svg {
             @include size(rem(23), rem(22));
@@ -156,7 +156,7 @@
         }
 
         &-phone {
-            font-size: rem(18);
+            font-size: rem(20);
 
             svg {
                 @include size(rem(23), rem(22));

@@ -1,0 +1,33 @@
+.list {
+    padding: 0;
+    margin: 0;
+    font-size: rem(16);
+
+    &--red {
+        .list__item::before {
+            background-image: url("data:image/svg+xml,%3Csvg width='19' height='15' viewBox='0 0 19 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 7L8.5 13.5L18 1' stroke='%23D83C35' stroke-width='2'/%3E%3C/svg%3E%0A");
+        }
+    }
+}
+
+.list__item {
+    display: block;
+    padding-left: rem(30);
+    position: relative;
+    margin-bottom: rem(25);
+
+    &::before {
+        display: block;
+        width: rem(17);
+        height: rem(13);
+        background:  0 0  no-repeat/contain;
+        position: absolute;
+        left: 0;
+        top: rem(3);
+        content: '';
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

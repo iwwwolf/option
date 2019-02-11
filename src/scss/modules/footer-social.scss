@@ -103,7 +103,7 @@ $socHoverColor: (
 
 @media (min-width: $smDesktopWidth) {
     .footer-social {
-        margin: 0;
+        margin: 0 0 0 auto;
 
         li {
             margin-left: rem(30);

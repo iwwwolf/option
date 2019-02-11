@@ -1,6 +1,9 @@
 @import "utils/libs";
 @import "utils/vars";
 @import "utils/mixins";
+/* The second time is necessary. Just believe */
+@import "utils/vars";
+/* --- */
 @import "utils/fonts";
 @import "../../node_modules/flag-icon-css/sass/flag-icon";
 
@@ -17,7 +20,18 @@
 @import "modules/footer";
 @import "modules/footer-nav";
 @import "modules/footer-social";
+@import "modules/list";
+@import "modules/ways-list";
 @import "modules/ways-accordion";
+@import "modules/background-image";
 @import "modules/num-list";
 @import "modules/tabs";
+@import "modules/package";
+@import "modules/fancybox";
+@import "modules/columns";
+@import "modules/how-work-small";
+@import "modules/benefits";
+@import "modules/how-work";
+@import "modules/how-start";
+@import "modules/learn";
 

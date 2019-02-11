@@ -9,6 +9,15 @@
 
 .intro__button {
     padding-top: rem(10);
+
+    .btn {
+        display: block;
+        margin-top: rem(25);
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
 }
 
 .intro__awards {
@@ -45,9 +54,14 @@
         min-height: rem(670);
     }
 
+    .intro__text {
+        font-size: rem(18);
+    }
+
     .intro__awards {
         width: rem(210);
         text-align: left;
+        font-size: rem(16);
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -59,6 +73,21 @@
 
             &:last-child {
                 right: 0;
+            }
+        }
+    }
+
+    .intro__button {
+        display: flex;
+        justify-content: center;
+
+        .btn {
+            margin-top: 0;
+            
+            &:last-child {
+                &:not(:first-child) {
+                    margin-left: rem(25);
+                }
             }
         }
     }

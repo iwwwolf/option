@@ -1,0 +1,36 @@
+.how-work {
+    background: $pageBackground;
+    padding: rem(30 0 50);
+    .tabs {
+        margin-bottom: rem(30);
+    }
+}
+
+.how-work__text {
+    background: #fff;
+    padding: rem(20);
+    font-size: rem(18);
+    border-radius: $globalRadius;
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: rem(30);
+    }
+}
+
+@media(min-width: $smDesktopWidth) {
+    .how-work {
+        padding: rem(80 0);
+    }
+
+    .how-work__wrapper {
+        display: flex;
+        align-items: flex-start;
+    }
+    .how-work__text {
+        padding: rem(34 60 40 40);
+    }
+}

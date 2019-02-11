@@ -1,0 +1,16 @@
+.learn {
+    position: relative;
+    padding: rem(0 0 80);
+}
+
+.learn__text {
+    max-width: rem(430);
+    padding-bottom: rem(10);
+    font-size: rem(18);
+}
+
+@media(min-width: $smDesktopWidth) {
+    .learn {
+        padding: rem(120 0 240);
+    }
+}

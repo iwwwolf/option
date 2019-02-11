@@ -49,21 +49,24 @@ button {
     cursor: pointer;
 }
 
-h1 {
+h1,
+.h1 {
     font-size: rem(32);
     line-height: 1.208;
     font-weight: 300;
     margin: rem(0 0 30);
 }
 
-h2 {
+h2,
+.h2 {
     font-size: rem(26);
     line-height: 1.208;
     font-weight: 300;
     margin: rem(0 0 22);
 }
 
-h3 {
+h3,
+.h3 {
     font-size: rem(22);
     line-height: 1.4385;
     font-weight: 300;
@@ -74,12 +77,28 @@ h3 {
     font-weight: 300;
 }
 
+.--fw-medium {
+    font-weight: 500;
+}
+
+.--fw-bold {
+    font-weight: bold;
+}
+
+.--color-primary {
+    color: $primaryColor;
+}
+
 .--visible-mobile {
     display: block;
 
     &-flex {
         display: flex;
     }
+}
+
+.--flex {
+    display: flex;
 }
 
 
@@ -96,15 +115,15 @@ h3 {
     }
 }
 
-@media (min-width: $tableWidth) {
-    html {
-        font-size: 32 / 768 * 100 + vw;
-    }
-}
-
 @media (min-width: $phoneWidth) and (orientation: landscape) {
     html {
         font-size: 15 / 480 * 100 + vw;
+    }
+}
+
+@media (min-width: $tableWidth) {
+    html {
+        font-size: 25 / 768 * 100 + vw;
     }
 }
 
@@ -113,13 +132,22 @@ h3 {
         font-size: 15px;
     }
 
-    h1 {
+    h1,
+    .h1 {
         font-size: rem(48);
-        margin: rem(0 0 35);
+        line-height: 1.2;
+        margin: rem(0 0 26);
     }
 
-    h3 {
-        font-size: rem(20);
+    h2,
+    .h2 {
+        font-size: rem(36);
+        margin-bottom: rem(35);
+    }
+
+    h3,
+    .h3 {
+        font-size: rem(24);
         margin: rem(0 0 35);
     }
 
@@ -130,6 +158,6 @@ h3 {
 
 @media (min-width: $xlDesktopWidth) {
     html {
-        font-size: 16 / 1600 * 100 + vw;
+        font-size: 15 / 2560 * 100 + vw;
     }
 }

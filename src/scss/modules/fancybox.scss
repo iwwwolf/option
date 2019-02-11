@@ -1,0 +1,18 @@
+.fancybox-bg {
+    background: #000;
+
+    .fancybox-is-open & {
+        opacity: 0.6;
+    }
+}
+.fancybox-button {
+    @include size(rem(44));
+}
+
+@media(min-width: $desktopWidth) {
+    .fancybox-slide {
+        &--video {
+            padding: 10rem;
+        }
+    }
+}

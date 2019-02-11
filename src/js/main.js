@@ -1,3 +1,5 @@
+import { accordion } from './accordion';
+import { tabs } from './tabs';
 
 let burgerLink = document.querySelector('.header__burger-link'),
     headLinks = document.querySelector('.head-links');
@@ -14,29 +16,6 @@ burgerLink.onclick = (e) => {
 };
 
 
-//accordion
-
-// let accordionLink = document.querySelectorAll('[data-accordion="link"]');
-
-// for (let i = 0; i < accordionLink.length; i++) {
-//     accordionLink[i].addEventListener('click', toggleItem, false);
-// }
-// function toggleItem(e) {
-//     let parent = this.parentNode;
-//     let target = parent.querySelector('[data-accordion="target"]');
-
-//     e.preventDefault();
-
-//     if (this.classList.contains('active')) {
-//         this.classList.remove('active');
-//         target.classList.remove('visible');
-//     } else {
-//         this.classList.add('active');
-//         target.classList.add('visible');
-//     }
-// }
-
-
 // Background video
 
 let sources = document.querySelectorAll('#backgroundVideo source');
@@ -51,12 +30,10 @@ if(window.innerWidth >= 980) {
     video.load();
 }
 
-import {slideToggle} from './accordion';
+accordion();
 
-let accordionLink = document.querySelectorAll('[data-accordion="link"]');
+tabs();
 
-for (let i = 0; i < accordionLink.length; i++) {
-    accordionLink[i].addEventListener('click', function () {slideToggle(event)}, false);
-}
-console.log($);
+
+
 

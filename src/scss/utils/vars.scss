@@ -7,7 +7,7 @@ $mainFontSize            : 15; //px
 $mainFontWeight          : 400;
 $mainLineHeight          : 1.4;
 
-$xlDesktopWidth          : 1600px;
+$xlDesktopWidth          : 2560px;
 $desktopWidth            : 1280px;
 $smDesktopWidth          : 980px;
 $tableWidth              : 768px;
@@ -29,7 +29,7 @@ $dangerColor             : #D83C35;
 // $light-color             : #999999;
 // $purple-color            : #8854d0;
 
-// Neutral Color
+// Neutral Colorhow-work__title
 // $neutral-primary         : #303133;
 // $neutral-regular         : #606266;
 // $neutral-secondary       : #909399;
@@ -46,7 +46,7 @@ $btnPrimary: $primaryColor;
 $btnPrimaryText: #fff;
 $btnPrimaryHover: darken($btnPrimary, 7%);
 $btnDanger: $dangerColor;
-$btnDangerText: $mainFontColor;
+$btnDangerText: #fff;
 $btnDangerHover: darken($btnDanger, 7%);
 $btnSuccess: $successColor;
 $btnSuccessText: $mainFontColor;
@@ -54,6 +54,7 @@ $btnSuccessHover: darken($btnSuccess, 7%);
 
 $containerPadding: 20;
 $globalRadius: 3px;
+$mainBoxShadow: rem(0 8 22) rgba(0, 0, 0, 0.15);
 
 $transition: all 200ms ease;
 

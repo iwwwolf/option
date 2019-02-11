@@ -11,6 +11,10 @@
         margin-right: rem(8);
         background-size: cover;
     }
+
+    .language__body {
+        transition: none;
+    }
 }
 
 .language__select {
@@ -27,11 +31,17 @@
     path {
         stroke: $primaryColor;
     }
+
+    &:not(.closed) {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
 }
 
 .language__body {
     display: none;
-    padding: rem(12 0 0);
+    padding: 0;
 
     &.visible {
         display: block;
@@ -41,7 +51,7 @@
 .language__list {
     column-count: 2;
     column-gap: rem(10);
-    padding: 0;
+    padding: rem(12 0 0);
     margin: 0;
 
     li {
@@ -68,29 +78,44 @@
         }
 
         &:hover {
+            .language__select {
+                svg {
+                    transform: rotate(180deg) !important;
+                }
+            }
+
             .language__body {
                 opacity: 1;
                 visibility: visible;
             }
         }
+        
+        .language__body {
+            display: block;
+            height: auto;
+            background: $headerBackground;
+            color: $headerTextColor;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 100%;
+            left: rem(-15);
+            transition: $transition;
+        }
     }
 
     .language__select {
+        &:not(.closed) {
+            svg {
+                transform: rotate(0);
+            }
+        }
+
         .language__name {
             display: none;
         }
     }
 
-    .language__body {
-        display: block;
-        background: $headerBackground;
-        color: $headerTextColor;
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 100%;
-        transition: $transition;
-    }
 
     .language__list {
         column-count: 1;

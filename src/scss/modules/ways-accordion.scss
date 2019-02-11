@@ -1,3 +1,24 @@
+[data-accordion="content"] {
+    display: block;
+    height: 0;
+    position: relative;
+    overflow: hidden;
+    transition: $transition;
+    will-change: height;
+    overflow: hidden;
+    transition: height 300ms;
+    will-change: height;
+
+    &.opened {
+        height: auto;
+    }
+}
+
+.ways-accordion {
+    position: relative;
+    overflow: hidden;
+}
+
 .ways-accordion__item {
     margin-bottom: rem(12);
     &:after {
@@ -19,7 +40,7 @@
     position: relative;
     cursor: pointer;
 
-    &.opened {
+    &:not(.closed) {
         .ways-accordion__arrow {
             svg {
                 transform: rotate(0);
@@ -75,105 +96,173 @@
 .ways-accordion__content {
     margin-bottom: rem(12);
     position: relative;
-    overflow: hidden;
-    height: auto;
-    display: block;
-    transition: height 300ms;
-    will-change: height;
+}
 
+.ways-accordion__content-wrap {
+    padding-top: rem(20);
+    position: relative;
+    z-index: 1;
 
-    &-wrap {
-        max-width: rem(680);
-        padding-top: rem(20);
-        position: relative;
-        z-index: 1;
+    &.--flex {
+        display: block;
     }
 }
 
-// .ways-accordion__image {
-//     width: 200%;
-//     position: absolute;
-//     right: rem(-18);
-//     bottom: 0;
-//     &:before {
-//         width: 100%;
-//         height: 50%;
-//         background: linear-gradient(to bottom, rgba(243,242,218,1) 0%,rgba(243,242,218,0) 100%);
-//         position: absolute;
-//         left: 0;
-//         top: 0;
-//         content: '';
-//     }
-//     img {
-//         display: block;
-//         max-width: 100%;
-//         height: auto;
-//     }
-// }
-
 .ways-accordion__text {
     font-size: rem(17);
-    padding-bottom: rem(10);
+    padding-bottom: rem(30);
     p {
         margin-bottom: rem(10);
     }
 }
 
+.ways-accordion__lamm {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: rem(44);
+    font-weight: 500;
+    font-size: rem(16);
+}
 
-@media(min-width: 560px) {
-    .ways-accordion__image {
-        width: 170%;
+.ways-accordion__lamm-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include size(rem(44));
+    min-width: rem(44);
+    background: $successColor;
+    border-radius: 50%;
+    margin-right: rem(15);
+
+    svg {
+        @include size(rem(28), rem(19));
     }
 }
 
-@media(min-width: 768px) {
-    .ways-accordion__image {
-        width: 130%;
+.ways-accordion__image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    &:before {
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to bottom, rgba(243,242,218,1) 0%,rgba(243,242,218,0) 100%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+    }
+    img {
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 140%;
     }
 }
 
-@media(min-width: 920px) {
+.ways-accordion__video-link {
+    &--round {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include size(rem(100));
+        border-radius: 50%;
+        background: rgba(#000, 0.5);
+        position: absolute;
+        right: 5%;
+        top: 35%;
+
+        svg {
+            @include size(rem(38), rem(46));
+        }
+    }
+}
+
+.ways-accordion__narrow-content {
+    max-width: rem(640);
+}
+
+@media(min-width: $smDesktopWidth) {
+    // .ways-accordion__item {
+    //     display: block !important;
+    // }
     .ways-accordion__item {
         display: none;
         margin: 0;
 
         .ways-accordion__content {
-            max-width: rem(1200);
-            padding: rem(0 18 30);
-            display: block !important;
+            height: auto !important;
+            //max-width: rem(1200);
+            //padding: rem(0 18 30);
+            //display: block !important;
             margin: 0 auto;
             position: static;
         }
-        &:first-child {
-            display: block;
+    }
+
+    .ways-accordion__content-wrap {
+        padding: {
+            top: rem(50);
+            bottom: rem(60);
+        };
+
+        &.--flex {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
     }
+
     .ways-accordion__name {
         display: none !important;
     }
 
     .ways-accordion__image {
-        width: auto;
-        height: 100%;
-        right: 0;
+        display: block;
+        // width: auto;
+        // height: 100%;
+        // right: 0;
         img {
-            max-width: none;
-            min-width: 100%;
-            min-height: 100%;
-            max-height: 100%;
+            // max-width: none;
+            // min-width: 100%;
+            // min-height: 100%;
+            // max-height: 100%;
         }
-        &:before {
-            display: none;
+        // &:before {
+        //     display: none;
+        // }
+    }
+
+    .ways-accordion__text {
+        font-size: rem(18);
+
+        h2 {
+            margin-bottom: rem(20);
+        }
+        
+        .package__parent + & {
+            padding-bottom: 0;
         }
     }
 
-    .ways-accordion.container {
-        max-width: none;
-    }
+    // .ways-accordion.container {
+    //     max-width: none;
+    // }
 }
 
-@media(max-width: 900px) {
-    .ways-accordion__item {
-        display: block !important;
+@media(min-width: $desktopWidth) {
+    .ways-accordion__video-link {
+        &--round {
+            right: 11%;
+        }
     }
 }

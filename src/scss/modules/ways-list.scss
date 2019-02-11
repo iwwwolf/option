@@ -1,0 +1,137 @@
+.ways-list {
+    display: none;
+    padding: rem(50 0 160);
+
+    .h1 {
+        margin-bottom: rem(120);
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
+.ways-list__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ways-list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    @include size(rem(270));
+    border-radius: 50%;
+    background: rgba(#fff, 0.6);
+    font-size: rem(30);
+    font-weight: 300;
+    text-decoration: none;
+    position: relative;
+    color: inherit;
+    transform: scale(1);
+    transition: $transition;
+
+    &:hover {
+        color: inherit;
+        transform: scale(1.1);
+        background: #fff;
+    }
+}
+
+.ways-list__text {
+    display: block;
+    text-align: center;
+    line-height: 1.2;
+}
+
+[class*="ways-list__icon"] {
+    margin-bottom: rem(20);
+}
+
+.ways-list__parent-icon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 56%;
+}
+
+.ways-list__icon {
+    &--trade {
+        @include size(rem(70), rem(53));
+    }
+
+    &--investing {
+        @include size(rem(69), rem(62));
+    }
+
+    &--involve {
+        @include size(rem(60), rem(66));
+    }
+}
+
+@media(min-width: $smDesktopWidth) {
+    .ways-list {
+        display: block;
+    }
+}
+
+@media(min-width: $desktopWidth) {
+    .ways-list__list {
+        justify-content: space-between;
+    }
+
+    .ways-list__item {
+        @include size(rem(360));
+    }
+
+    [class*="ways-list__icon"] {
+        margin-bottom: rem(30);
+    }
+
+    .ways-list__icon {
+        &--trade {
+            @include size(rem(85), rem(68));
+        }
+
+        &--investing {
+            @include size(rem(85), rem(77));
+        }
+
+        &--involve {
+            @include size(rem(75), rem(81));
+        }
+    }
+}
+
+// @media(min-width: 920px) {
+//     .ways-list {
+//         display: flex;
+//     }
+// }
+
+// @media(min-width: 1040px) {
+//     .ways-list__item {
+//         width: rem(300);
+//         height: rem(300);
+//         font-size: rem(18);
+//     }
+
+//     .ways-list__icon {
+//         width: rem(70);
+//         height: rem(70);
+//     }
+// }
+
+// @media(min-width: 1200px) {
+//     .ways-list__item {
+//         width: rem(364);
+//         height: rem(364);
+//         font-size: rem(26);
+//     }
+
+//     .ways-list__icon {
+//         width: rem(80);
+//         height: rem(80);
+//         margin-bottom: rem(34);
+//     }
+// }

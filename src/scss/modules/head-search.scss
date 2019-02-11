@@ -2,10 +2,8 @@
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
-}
+    position: relative;
 
-.head-search__control {
-    flex-basis: 100%;
     @include placeholder {
         color: inherit;
     }
@@ -13,9 +11,12 @@
 
 .head-search__input {
     display: block;
+    flex-basis: 100%;
     @include size(100%, rem(28));
     padding: 0;
     border: none;
+    color: $defaultColor;
+    transition: $transition;
 }
 
 .head-search__btn {
@@ -37,15 +38,62 @@
     }
 }
 
+.head-search__label {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 @media (min-width: $smDesktopWidth) {
-    .head-search__control {
-        display: none;
+    .head-search__input {
+        width: 0;
+        opacity: 0;
+        padding: 0;
+        border-radius: $globalRadius 0 0 $globalRadius;
+        position: absolute;
+        top: 0;
+        right: 100%;
+
+        &:focus {
+            width: rem(230);
+            padding: rem(0 5 0 15);
+            opacity: 1;
+            visibility: visible;
+
+            & ~ .head-search__label {
+                display: none;
+            }
+
+            & ~ .head-search__btn {
+                background: $successColor;
+                color: $btnSuccessText;
+
+                &:hover {
+                    background: $btnSuccessHover;
+                }
+            }
+        }
     }
 
     .head-search__btn {
         min-width: 0;
         margin: 0;
-        padding: rem(6);
+        padding: rem(6 10);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 0 $globalRadius $globalRadius 0;
+        transition: $transition;
+        
+        svg {
+            margin-right: rem(8);
+        }
+    }
+
+    .head-search__label {
+        display: block;
     }
 }

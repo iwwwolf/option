@@ -1,0 +1,28 @@
+.how-start {
+    padding: rem(30 0 80);
+    position: relative;
+
+    .num-list li {
+        margin-bottom: rem(46);
+    }
+
+    h2 {
+        margin-bottom: rem(40);
+    }
+}
+
+.how-start__wrapper {
+    max-width: rem(600);
+}
+
+.how-start__title {
+    font-size: rem(24);
+    margin-bottom: rem(15);
+    font-weight: 300;
+}
+
+@media(min-width: $smDesktopWidth) {
+    .how-start {
+        padding: rem(80 0);
+    }
+}
