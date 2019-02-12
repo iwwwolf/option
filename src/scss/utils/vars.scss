@@ -25,21 +25,10 @@ $footerTextColor         : $defaultColor;
 $primaryColor            : #009E82;
 $successColor            : #FDCD53;
 $dangerColor             : #D83C35;
-// $warning-color           : #fed330;
-// $light-color             : #999999;
-// $purple-color            : #8854d0;
-
-// Neutral Colorhow-work__title
-// $neutral-primary         : #303133;
-// $neutral-regular         : #606266;
-// $neutral-secondary       : #909399;
-// $neutral-placeholder     : #C0C4CC;
 
 // Border Color
 $borderBase              : #e6e6e6;
 $borderLight             : #BEBEBE;
-// $border-lighter          : #EBEEF5;
-// $border-lightex          : #F2F6FC;
 
 // Button Color
 $btnPrimary: $primaryColor;
@@ -59,4 +48,4 @@ $mainBoxShadow: rem(0 8 22) rgba(0, 0, 0, 0.15);
 $transition: all 200ms ease;
 
 //Flags
-$flag-icon-css-path: '/dist/src/images/flags';
+$flag-icon-css-path: '/src/images/flags';

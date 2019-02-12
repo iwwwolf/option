@@ -3,7 +3,7 @@ function slideToggle(event) {
         let i;
         let elmHeight = 0;
         let elmMargin = 0;
-        const elChildren = el.children;
+        let elChildren = el.children;
 
         for (i = 0; i < elChildren.length; i++) {
             elmHeight += elChildren[i].offsetHeight;
@@ -13,21 +13,17 @@ function slideToggle(event) {
         return elmHeight + elmMargin;
     }
 
-    const elParent = event.currentTarget.closest('[data-accordion="parent"]');
-    const targetBody = elParent.querySelector('[data-accordion="content"]');
+    let elParent = event.currentTarget.closest('[data-accordion="parent"]');
+    let targetBody = elParent.querySelector('[data-accordion="content"]');
+    let targetTitle = event.currentTarget.closest('[data-accordion="link"]');
 
-    if (event.target.hasAttribute('data-accordion', '[data-accordion="link"]')) {
-        var targetTitle = event.target;
-    } else {
-        var targetTitle = event.currentTarget.closest('[data-accordion="link"]');
-    }
-
+    
     if (targetTitle.classList.contains('closed')) {
         targetTitle.classList.remove('closed');
         targetBody.style.height = `${0}px`;
         targetBody.classList.add('opened');
 
-        const targetBodyHeight = childrenHeight(targetBody);
+        let targetBodyHeight = childrenHeight(targetBody);
 
         targetBody.style.height = `${targetBodyHeight}px`;
 
@@ -35,7 +31,7 @@ function slideToggle(event) {
             targetBody.removeAttribute('style');
         }, 400);
     } else {
-        const targetBodyInitHeight = `${targetBody.offsetHeight}px`;
+        let targetBodyInitHeight = `${targetBody.offsetHeight}px`;
         targetTitle.classList.add('closed');
         targetBody.style.height = targetBodyInitHeight;
         targetBody.classList.remove('opened');
@@ -48,7 +44,8 @@ function slideToggle(event) {
 
 export function accordion(){
     let accordionLink = document.querySelectorAll('[data-accordion="link"]');
-
+    console.log(accordionLink);
+    
     for (let i = 0; i < accordionLink.length; i++) {
         accordionLink[i].addEventListener('click', function () { slideToggle(event) }, false);
     }

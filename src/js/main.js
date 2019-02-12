@@ -1,6 +1,7 @@
 import { accordion } from './accordion';
 import { tabs } from './tabs';
 
+
 let burgerLink = document.querySelector('.header__burger-link'),
     headLinks = document.querySelector('.head-links');
 
